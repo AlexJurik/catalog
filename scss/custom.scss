@@ -1,0 +1,28 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+    primary: #234d7b,
+    secondary: #3b3c3e,
+    success: #1e6111,
+    info:  #64c3d2,
+    warning: #f5e74a,
+    danger: #820410
+);
+
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * 1),
+    2: ($spacer * 2),
+    3: ($spacer * 3),
+    4: ($spacer * 4),
+    5: ($spacer * 5),
+    8: ($spacer * 8),
+    15: ($spacer * 15),
+  ),
+  $spacers
+);
+
+@import "../node_modules/bootstrap";
