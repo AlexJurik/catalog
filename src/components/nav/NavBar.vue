@@ -1,6 +1,9 @@
 <template>
   <div class="sticky-top">
-    <nav class="custom__navbar">
+    <nav
+      class="custom__navbar"
+      :class="{ scrolled_navbar: scrolledDown === 1 }"
+    >
       <div class="d-flex justify-content-between w-100">
         <router-link to="/" class="custom__navbar-brand"
           >Kolesnyk shop</router-link
@@ -12,16 +15,39 @@
         </div>
       </div>
     </nav>
-    <div style="height: 2px" class="mx-15 border-top"></div>
+    <div
+      v-if="scrolledDown !== 1"
+      style="height: 2px"
+      class="mx-15 border-top"
+    ></div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  name: "NavBar",
+  data: () => {
+    return { scrolledDown: 0 };
+  },
+  methods: {
+    updateScroll() {
+      this.scrolledDown = window.scrollY > 50 ? 1 : 0;
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
+});
+</script>
 
 
 
 <style lang="scss">
 @import "../../../scss/variables.scss";
 .custom__navbar {
-  padding: $gutter * 3;
+  padding: $gutter $gutter * 3;
+  transition: all 0.2s ease-in;
 }
 .custom__navbar-brand {
   font-size: $gutter * 4;
@@ -31,5 +57,10 @@
   &:hover {
     color: #1e6111;
   }
+}
+.scrolled_navbar {
+  background-color: white;
+  box-shadow: 0px -15px 30px black;
+  transition: all 0.2s ease-in;
 }
 </style>

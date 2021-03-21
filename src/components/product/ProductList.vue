@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row row-cols-auto">
-      <div class="col-sm" v-for="item in items" :key="item.message">
+      <div class="col d-flex justify-content-center" v-for="item in items" :key="item.message">
         <Product />
       </div>
     </div>
@@ -16,7 +16,17 @@ export default Vue.extend({
   components: { Product },
   data: () => {
     return {
-      items: [{ message: "Foo" }, { message: "Bar" }, { message: "Bar" }, { message: "Bar" }, { message: "Bar" }, { message: "Bar" }],
+      items: [
+        { message: "Foo" },
+        { message: "Bar" },
+        { message: "Bar" },
+        { message: "Bar" },
+        { message: "Bar" },
+        { message: "Bar" },
+        { message: "Bar" },
+        { message: "Bar" },
+        { message: "Bar" },
+      ],
     };
   },
 });
