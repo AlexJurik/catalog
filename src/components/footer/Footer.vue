@@ -1,10 +1,59 @@
 <template>
-  <div class="footer">
-    <div style="height: 2px" class="mx-15 border-top"></div>
-    <div class="footer__content">
+  <footer class="footer">
+    <div style="height: 2px" class="mx-15 border-bottom"></div>
+    <div class="p-4">
       <h3>Contact</h3>
+      <div class="d-flex justify-content-center m-2">
+        <div class="mx-3">
+          <a href="https://facebook.com/" target="_blank">
+            <img
+              src="../../assets/facebook.svg"
+              width="24"
+              height="24"
+              alt="Instagram"
+            />
+          </a>
+        </div>
+        <div class="mx-3">
+          <a href="https://instagram.com/" target="_blank">
+            <img
+              src="../../assets/instagram.svg"
+              width="24"
+              height="24"
+              alt="Instagram"
+            />
+          </a>
+        </div>
+        <div class="mx-3">
+          <a href="mailto:alexander.jurik@outlook.com" target="_blank">
+            <img
+              src="../../assets/envelope-fill.svg"
+              width="24"
+              height="24"
+              alt="Mail"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <div class="mx-3">
+          <img
+            src="../../assets/telephone-fill.svg"
+            width="24"
+            height="24"
+            alt="Telephone"
+          />
+        </div>
+        <p>+421 950 000 000</p>
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <span>Code of this website is licensed under the MIT License.</span>
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <span>© 2021 All Rights Reserved.</span>
+      </div>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script lang="ts">
@@ -13,14 +62,3 @@ export default Vue.extend({
   name: "Footer",
 });
 </script>
-
-
-<style lang="scss">
-@import "../../../scss/variables.scss";
-.footer {
-  padding: $gutter $gutter * 3;
-}
-.footer__content {
-  padding: $gutter * 3;
-}
-</style>
