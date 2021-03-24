@@ -20,9 +20,9 @@ export default Vue.extend({
   name: "ProductList",
   components: { Product },
   props: {
-    products: { type: Array as PropType<Array<ProductInteface>>, default() {
-      return [{id: 1, title: 'The north face', description: 'Super stuff', size: 'xxl', state: 'new'}];
-    }}, 
+    products: {
+      type: Array as PropType<Array<ProductInteface>>,
+    },
   },
 });
 </script>

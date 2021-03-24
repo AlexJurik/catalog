@@ -6,7 +6,7 @@
     >
       <div class="d-flex justify-content-between w-100">
         <router-link to="/" class="custom__navbar-brand"
-          >Kolesnyk shop</router-link
+          >Outdoorline store</router-link
         >
         <div class="d-flex align-items-center">
           <router-link to="/cart" type="button" class="btn btn-secondary"
@@ -55,7 +55,8 @@ export default Vue.extend({
   color: black;
   cursor: pointer;
   &:hover {
-    color: #1e6111;
+    color: #1451ac;
+    text-decoration: none;
   }
 }
 .scrolled_navbar {
