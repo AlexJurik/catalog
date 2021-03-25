@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Products from '../views/Products.vue'
+import ProductsView from '../views/ProductsView.vue'
+import ProductView from '../views/ProductView.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,12 @@ const routes: Array<RouteConfig> = [
   {
     path: '/products',
     name: 'Products',
-    component: Products
+    component: ProductsView
+  },
+  {
+    path: '/product/:id',
+    name: 'Product',
+    component: ProductView
   },
   {
     path: '/about',
