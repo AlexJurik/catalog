@@ -2,7 +2,7 @@
   <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem">
     <!-- @TODO -->
     <img
-      :src="'http://localhost:1337' + product.images[1].url"
+      :src="'http://localhost:1337' + product.images[0].url"
       :alt="product.alternativeText"
       class="card-img-top rounded"
     />

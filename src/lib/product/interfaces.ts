@@ -5,7 +5,7 @@ export default interface ProductInterface {
     size: SizesEnum;
     state: string;
     price: number;
-    images: string[];
+    images: ImageInterface[];
 }
 
 export interface ImageInterface {

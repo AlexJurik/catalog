@@ -1,17 +1,17 @@
 <template>
   <div class="p-5">
-    <ProductList :products="products" />
+    <ProductListComponent :products="products" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import axios from "axios";
-import ProductList from "../components/product/ProductListComponent.vue";
+import ProductListComponent from "../components/product/ProductListComponent.vue";
 import ProductInterface from "../lib/product/interfaces";
 export default Vue.extend({
   name: "ProductsView",
-  components: { ProductList },
+  components: { ProductListComponent },
   data() {
     return {
       products: [] as Array<ProductInterface>,
@@ -19,7 +19,7 @@ export default Vue.extend({
   },
   async created() {
     console.log(process.env.API_URL);
-    await axios.get("/products").then((response) => {
+    await axios.get("http://localhost:1337/products").then((response) => {
       this.products = Array.from(response.data);
       this.$emit("products", response.data);
     });

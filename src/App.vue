@@ -10,6 +10,7 @@
 import Vue from "vue";
 import NavBar from "./components/nav/NavBar.vue";
 import Footer from "./components/footer/Footer.vue";
+
 export default Vue.extend({
   components: {
     NavBar,

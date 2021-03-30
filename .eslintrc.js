@@ -3,6 +3,10 @@ module.exports = {
   env: {
     node: true
   },
+  globals: {
+    "$": true,
+    "jQuery": true
+  },
   'extends': [
     'plugin:vue/essential',
     'eslint:recommended',
@@ -14,6 +18,6 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    "max-len": [2, 80, 4, {"ignoreUrls": true}],
+    "max-len": [2, 100, 4, {"ignoreUrls": true}],
   }
 }
