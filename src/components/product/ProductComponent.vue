@@ -1,14 +1,14 @@
 <template>
-  <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 18rem">
-    <!-- @TODO -->
-    <img
-      :src="'http://localhost:1337' + product.images[0].url"
-      :alt="product.alternativeText"
-      class="card-img-top rounded"
-    />
+  <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 20rem">
+    <ImagesComponent :images="product.images" />
     <div class="card-body">
-      <h5 class="font-weight-bold card-title">{{ product.title }}</h5>
-      <p class="card-text">{{ product.description }}</p>
+      <h5 class="text-uppercase text-truncated card-title">
+        <strong> {{ product.title }}</strong>
+      </h5>
+      <p class="card-text text-truncate">{{ product.description }}</p>
+      <h5 class="text-right text-muted">
+        <strong>{{ product.price }} €</strong>
+      </h5>
       <a :href="'/product/' + product.id" class="btn btn-primary">Open</a>
     </div>
   </div>
@@ -17,8 +17,12 @@
 <script lang="ts">
 import Vue, { PropType } from "vue";
 import ProductInteface from "../../lib/product/interfaces";
+import ImagesComponent from "../images/ImagesComponent.vue";
 export default Vue.extend({
   name: "ProductComponent",
+  components: {
+    ImagesComponent,
+  },
   props: {
     product: {
       type: Object as PropType<ProductInteface>,

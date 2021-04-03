@@ -5,9 +5,12 @@
       <h3>Contact</h3>
       <div class="d-flex justify-content-center m-2">
         <div class="mx-3">
-          <a href="https://facebook.com/" target="_blank">
+          <a
+            href="https://www.facebook.com/groups/973474723027172"
+            target="_blank"
+          >
             <img
-              src="../../assets/facebook.svg"
+              src="../../assets/icons/facebook.svg"
               width="24"
               height="24"
               alt="Instagram"
@@ -17,7 +20,7 @@
         <div class="mx-3">
           <a href="https://instagram.com/" target="_blank">
             <img
-              src="../../assets/instagram.svg"
+              src="../../assets/icons/instagram.svg"
               width="24"
               height="24"
               alt="Instagram"
@@ -27,7 +30,7 @@
         <div class="mx-3">
           <a href="mailto:alexander.jurik@outlook.com" target="_blank">
             <img
-              src="../../assets/envelope-fill.svg"
+              src="../../assets/icons/envelope-fill.svg"
               width="24"
               height="24"
               alt="Mail"
@@ -38,7 +41,7 @@
       <div class="d-flex justify-content-center mt-3">
         <div class="mx-3">
           <img
-            src="../../assets/telephone-fill.svg"
+            src="../../assets/icons/telephone-fill.svg"
             width="24"
             height="24"
             alt="Telephone"
@@ -47,10 +50,9 @@
         <p>+421 950 000 000</p>
       </div>
       <div class="d-flex justify-content-center mt-3">
-        <span>Code of this website is licensed under the MIT License.</span>
-      </div>
-      <div class="d-flex justify-content-center mt-3">
-        <span>© 2021 All Rights Reserved.</span>
+        <span
+          ><strong>Outdoorline store</strong> © 2021 All Rights Reserved.</span
+        >
       </div>
     </div>
   </footer>

@@ -1,69 +1,49 @@
 <template>
-  <div class="container p-5">
-    <div class="col d-flex justify-content-center" v-if="!!product">
-      <div class="mb-5">
+  <div class="p-5" v-if="!!product">
+    <img
+      class="position-fixed product-view__back"
+      src="../assets/icons/arrow-left.svg"
+      width="40"
+      height="40"
+      alt="Go back"
+      @click="goBack()"
+    />
+    <div class="m-auto mb-5 product-view__container">
+      <ImagesComponent
+        class="mb-5"
+        :images="product.images"
+        :width="600"
+        :height="700"
+      />
+      <div class="d-flex justify-content-between mb-5">
         <div
-          v-if="product.images && product.images.length"
-          id="productImageCarousel"
-          class="carousel slide carousel-fade"
-          data-bs-ride="carousel"
+          class="product-view__title"
+          data-toggle="tooltip"
+          :title="product.title"
         >
-          <div class="carousel-indicators">
-            <button
-              v-for="(image, index) in product.images"
-              :key="index"
-              type="button"
-              data-bs-target="#productImageCarousel"
-              :data-bs-slide-to="index"
-              v-on:click="switchImage(undefined, index)"
-              :class="{ active: index === activeImageId }"
-            ></button>
-          </div>
-          <div
-            v-if="product.images && product.images.length"
-            class="carousel-inner"
-          >
-            <div
-              v-for="(image, index) in product.images"
-              :key="index"
-              class="carousel-item"
-              :class="{ active: index === activeImageId }"
-            >
-              <img
-                :src="'http://localhost:1337' + image.url"
-                class="d-block img-fluid rounded"
-                width="400"
-                height="500"
-                :alt="image.alternativeText"
-              />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#productImageCarousel"
-            data-bs-slide="prev"
-            v-if="activeImageId > 0"
-            v-on:click="switchImage('prev')"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#productImageCarousel"
-            data-bs-slide="next"
-            v-if="activeImageId !== product.images.length - 1"
-            v-on:click="switchImage('next')"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <h3 class="text-truncate">
+            {{ product.title }}
+          </h3>
         </div>
+        <h3>
+          <strong class="text-muted">{{ product.price }} €</strong>
+        </h3>
       </div>
+      <template v-if="product.description">
+        <h5 class="d-flex align-content-start">
+          <strong>Description:</strong>
+        </h5>
+        <p class="d-flex align-content-start mb-5 product-view__desc">
+          {{ product.description }}
+        </p>
+      </template>
+      <template v-if="product.state">
+        <h5 class="d-flex align-content-start"><strong>State:</strong></h5>
+        &nbsp;
+        <p class="d-flex align-content-start">{{ product.state }}</p>
+      </template>
+      <button class="btn btn-primary btn-lg w-100">Add to cart</button>
     </div>
-    <a :href="'/'" class="btn btn-primary">Go back</a>
   </div>
 </template>
 
@@ -71,12 +51,15 @@
 import Vue from "vue";
 import axios from "axios";
 import ProductInterface from "../lib/product/interfaces";
+import ImagesComponent from "../components/images/ImagesComponent.vue";
 export default Vue.extend({
   name: "ProductView",
-  data(): { product?: ProductInterface; activeImageId: number } {
+  components: {
+    ImagesComponent,
+  },
+  data(): { product?: ProductInterface } {
     return {
       product: undefined,
-      activeImageId: 0,
     };
   },
   async created() {
@@ -88,16 +71,30 @@ export default Vue.extend({
       });
   },
   methods: {
-    switchImage(direction?: "prev" | "next", index?: number) {
-      if (direction) {
-        this.activeImageId =
-          direction === "prev" ? --this.activeImageId : ++this.activeImageId;
-      }
-
-      if (index !== undefined && index >= 0) {
-        this.activeImageId = index;
-      }
+    goBack() {
+      this.$router.push("/");
     },
   },
 });
 </script>
+
+<style lang="scss">
+@import "../../scss/variables.scss";
+.product-view__container {
+  max-width: $gutter * 51;
+}
+
+.product-view__title {
+  max-width: 80%;
+}
+
+.product-view__desc {
+  text-align: left;
+}
+
+.product-view__back {
+  cursor: pointer;
+  top: 114px;
+  left: 48px;
+}
+</style>

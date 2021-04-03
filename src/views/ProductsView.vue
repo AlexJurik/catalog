@@ -18,7 +18,6 @@ export default Vue.extend({
     };
   },
   async created() {
-    console.log(process.env.API_URL);
     await axios.get("http://localhost:1337/products").then((response) => {
       this.products = Array.from(response.data);
       this.$emit("products", response.data);
