@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div v-if="products.length" class="row">
+    <div v-if="products && products.length" class="row">
       <div
         class="col d-flex justify-content-center"
         v-for="product in products"

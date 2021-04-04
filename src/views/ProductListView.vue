@@ -5,23 +5,22 @@
 </template>
 
 <script lang="ts">
+import ProductInterface from "@/lib/product/interfaces";
 import Vue from "vue";
-import axios from "axios";
 import ProductListComponent from "../components/product/ProductListComponent.vue";
-import ProductInterface from "../lib/product/interfaces";
+import { RootActions } from "../store/actions";
 export default Vue.extend({
   name: "ProductListView",
   components: { ProductListComponent },
-  data() {
-    return {
-      products: [] as Array<ProductInterface>,
-    };
+  computed: {
+    products: {
+      get(): ProductInterface[] {
+        return this.$store.getters.getProducts;
+      },
+    },
   },
-  async created() {
-    await axios.get("http://localhost:1337/products").then((response) => {
-      this.products = Array.from(response.data);
-      this.$emit("products", response.data);
-    });
+  mounted() {
+    this.$store.dispatch(RootActions.LOAD_PRODUCTS);
   },
 });
 </script>

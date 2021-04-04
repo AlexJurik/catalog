@@ -9,7 +9,9 @@
       <h5 class="text-right text-muted">
         <strong>{{ product.price }} €</strong>
       </h5>
-      <a :href="'/product/' + product.id" class="btn btn-primary">Open</a>
+      <router-link :to="'/products/' + product.id" class="btn btn-primary"
+        >Open</router-link
+      >
     </div>
   </div>
 </template>

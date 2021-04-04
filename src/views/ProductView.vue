@@ -42,37 +42,39 @@
         &nbsp;
         <p class="d-flex align-content-start">{{ product.state }}</p>
       </template>
-      <button class="btn btn-primary btn-lg w-100">Add to cart</button>
+      <button class="btn btn-primary btn-lg w-100" @click="addToCart()">
+        Add to cart
+      </button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import { RootActions } from "@/store/actions";
+import { CartActions } from "@/store/cart/actions";
 import Vue from "vue";
-import axios from "axios";
-import ProductInterface from "../lib/product/interfaces";
 import ImagesComponent from "../components/images/ImagesComponent.vue";
 export default Vue.extend({
   name: "ProductView",
   components: {
     ImagesComponent,
   },
-  data(): { product?: ProductInterface } {
-    return {
-      product: undefined,
-    };
+  computed: {
+    product: {
+      get() {
+        return this.$store.getters.getProduct(Number(this.$route.params.id));
+      },
+    },
   },
-  async created() {
-    await axios
-      .get(`http://localhost:1337/products/${this.$route.params.id}`)
-      .then((response) => {
-        this.product = response.data as ProductInterface;
-        this.$emit("products", response.data);
-      });
+  mounted() {
+    this.$store.dispatch(RootActions.LOAD_PRODUCTS);
   },
   methods: {
     goBack() {
       this.$router.push("/");
+    },
+    addToCart() {
+      this.$store.dispatch(CartActions.ADD_PRODUCT, this.product);
     },
   },
 });

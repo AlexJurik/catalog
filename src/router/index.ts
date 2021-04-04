@@ -12,14 +12,14 @@ const routes: Array<RouteConfig> = [
     component: ProductListView
   },
   {
-    path: '/product/:id',
+    path: '/products/:id',
     name: 'Product',
     component: ProductView
   },
-  {
-    path: '/about',
-    name: 'About',
-  },
+  // {
+  //   path: '/about',
+  //   name: 'About',
+  // },
   {
     path: '/',
     redirect: '/products',

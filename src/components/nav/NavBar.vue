@@ -10,7 +10,10 @@
         >
         <div class="d-flex align-items-center">
           <router-link to="/cart" type="button" class="btn btn-secondary"
-            >Cart</router-link
+            >Cart
+            <span class="badge badge-primary">{{
+              productsInCart
+            }}</span></router-link
           >
         </div>
       </div>
@@ -29,6 +32,13 @@ export default Vue.extend({
   name: "NavBar",
   data: () => {
     return { scrolledDown: 0 };
+  },
+  computed: {
+    productsInCart: {
+      get() {
+        return this.$store.getters.getProductsLength;
+      },
+    },
   },
   methods: {
     updateScroll() {
