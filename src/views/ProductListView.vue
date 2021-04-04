@@ -10,7 +10,7 @@ import axios from "axios";
 import ProductListComponent from "../components/product/ProductListComponent.vue";
 import ProductInterface from "../lib/product/interfaces";
 export default Vue.extend({
-  name: "ProductsView",
+  name: "ProductListView",
   components: { ProductListComponent },
   data() {
     return {
