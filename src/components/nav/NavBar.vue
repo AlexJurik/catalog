@@ -9,12 +9,27 @@
           >Outdoorline store</router-link
         >
         <div class="d-flex align-items-center">
-          <router-link to="/cart" type="button" class="btn btn-secondary"
-            >Cart
-            <span class="badge badge-primary">{{
-              productsInCart
-            }}</span></router-link
-          >
+          <div class="dropdown" :class="{ show: showCart }">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cartButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              :aria-expanded="showCart"
+              @click="showCart = !showCart"
+            >
+              Cart <span class="badge badge-primary">{{ productsInCart }}</span>
+            </button>
+            <div
+              style="right: 0; left: auto"
+              class="dropdown-menu dropdown-menu-right"
+              :class="{ show: showCart }"
+              aria-labelledby="cartButton"
+            >
+              <Cart />
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -28,10 +43,14 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Cart from "../cart/Cart.vue";
 export default Vue.extend({
   name: "NavBar",
+  components: {
+    Cart,
+  },
   data: () => {
-    return { scrolledDown: 0 };
+    return { scrolledDown: 0, showCart: false };
   },
   computed: {
     productsInCart: {

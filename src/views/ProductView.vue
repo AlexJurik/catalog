@@ -50,6 +50,7 @@
 </template>
 
 <script lang="ts">
+import { RootActions } from "@/store/actions";
 import { CartActions } from "@/store/cart/actions";
 import Vue from "vue";
 import ImagesComponent from "../components/images/ImagesComponent.vue";
@@ -64,6 +65,9 @@ export default Vue.extend({
         return this.$store.getters.getProduct(Number(this.$route.params.id));
       },
     },
+  },
+  mounted() {
+    this.$store.dispatch(RootActions.LOAD_PRODUCTS);
   },
   methods: {
     goBack() {
