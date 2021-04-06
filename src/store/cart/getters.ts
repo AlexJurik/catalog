@@ -7,6 +7,10 @@ export const getters: GetterTree<CartState, RootState> = {
         return state.products;
     },
     getProductsLength(state) {
-        return state.products.length;
+        let count = 0;
+        for (const product of state.products) {
+            count += product.count;
+        }
+        return count;
     }
 }
