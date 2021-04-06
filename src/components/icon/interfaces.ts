@@ -1,0 +1,1 @@
+export type IconsType = 'arrow-left' | 'envelope-fill' | 'facebook' | 'instagram' | 'telephone-fill' | 'trash' | 'minus-circle' | 'plus-circle';

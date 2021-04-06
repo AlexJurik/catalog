@@ -30,5 +30,12 @@ export default Vue.extend({
   text-align: center;
   color: #2c3e50;
   min-width: 400px;
+
+  background: linear-gradient(
+    45deg,
+    rgba(46, 46, 46, 0.6951155462184874) 0%,
+    rgba(113, 113, 113, 0) 49%,
+    rgba(37, 37, 37, 0.6895133053221288) 100%
+  );
 }
 </style>
