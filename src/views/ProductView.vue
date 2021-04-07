@@ -1,13 +1,12 @@
 <template>
   <div class="p-5" v-if="!!product">
-    <img
+    <Icon
       class="position-fixed product-view__back"
-      src="../assets/icons/arrow-left.svg"
-      width="40"
-      height="40"
-      alt="Go back"
+      icon="arrow-left"
+      :size="40"
       @click="goBack()"
     />
+
     <div class="m-auto mb-5 product-view__container">
       <ImagesComponent
         class="mb-5"
@@ -42,7 +41,7 @@
         &nbsp;
         <p class="d-flex align-content-start">{{ product.state }}</p>
       </template>
-      <button class="btn btn-primary btn-lg w-100" @click="addToCart()">
+      <button class="btn btn-secondary btn-lg w-100" @click="addToCart()">
         Add to cart
       </button>
     </div>

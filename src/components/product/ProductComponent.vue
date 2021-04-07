@@ -6,28 +6,46 @@
         <strong> {{ product.title }}</strong>
       </h5>
       <p class="card-text text-truncate">{{ product.description }}</p>
-      <h5 class="text-right text-muted">
+      <h5 class="text-muted">
         <strong>{{ product.price }} €</strong>
       </h5>
-      <router-link :to="'/products/' + product.id" class="btn btn-primary"
-        >Open</router-link
-      >
+      <div>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style="margin-right: 8px"
+          @click="addToCart()"
+        >
+          <Icon icon="cart-plus" />
+        </button>
+        <router-link :to="'/products/' + product.id" class="btn btn-primary"
+          >More</router-link
+        >
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import { CartActions } from "@/store/cart/actions";
 import Vue, { PropType } from "vue";
 import ProductInteface from "../../lib/product/interfaces";
 import ImagesComponent from "../images/ImagesComponent.vue";
+import Icon from "../icon/Icon.vue";
 export default Vue.extend({
   name: "ProductComponent",
   components: {
     ImagesComponent,
+    Icon,
   },
   props: {
     product: {
       type: Object as PropType<ProductInteface>,
+    },
+  },
+  methods: {
+    addToCart() {
+      this.$store.dispatch(CartActions.ADD_PRODUCT, this.product);
     },
   },
 });

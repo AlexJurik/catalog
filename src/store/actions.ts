@@ -1,3 +1,4 @@
+import ProductInterface from '@/lib/product/interfaces';
 import { RootMutations } from './mutations';
 import { RootState } from './interfaces';
 import { ActionTree } from 'vuex';
@@ -10,7 +11,11 @@ export enum RootActions {
 export const actions: ActionTree<RootState, RootState> = {
     async [RootActions.LOAD_PRODUCTS](context) {
         await axios.get("http://localhost:1337/products").then((response) => {
-            context.commit(RootMutations.SET_PRODUCTS, Array.from(response.data));
+            const formattedData = [...response.data] as ProductInterface[];
+            for (const product of formattedData) {
+                product.url = `http://localhost:1337/products/${product.id}`;
+            }
+            context.commit(RootMutations.SET_PRODUCTS, formattedData);
         });
     }
 }

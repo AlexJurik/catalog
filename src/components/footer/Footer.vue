@@ -9,43 +9,23 @@
             href="https://www.facebook.com/groups/973474723027172"
             target="_blank"
           >
-            <img
-              src="../../assets/icons/facebook.svg"
-              width="24"
-              height="24"
-              alt="Instagram"
-            />
+            <Icon icon="facebook" />
           </a>
         </div>
         <div class="mx-3">
           <a href="https://instagram.com/" target="_blank">
-            <img
-              src="../../assets/icons/instagram.svg"
-              width="24"
-              height="24"
-              alt="Instagram"
-            />
+            <Icon icon="instagram" />
           </a>
         </div>
         <div class="mx-3">
           <a href="mailto:alexander.jurik@outlook.com" target="_blank">
-            <img
-              src="../../assets/icons/envelope-fill.svg"
-              width="24"
-              height="24"
-              alt="Mail"
-            />
+            <Icon icon="envelope-fill" :size="24" />
           </a>
         </div>
       </div>
       <div class="d-flex justify-content-center mt-3">
         <div class="mx-3">
-          <img
-            src="../../assets/icons/telephone-fill.svg"
-            width="24"
-            height="24"
-            alt="Telephone"
-          />
+          <Icon icon="telephone-fill" />
         </div>
         <p>+421 950 000 000</p>
       </div>
@@ -60,7 +40,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import Icon from "../icon/Icon.vue";
 export default Vue.extend({
   name: "Footer",
+  components: {
+    Icon,
+  },
 });
 </script>

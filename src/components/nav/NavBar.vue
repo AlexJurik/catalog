@@ -19,7 +19,10 @@
               :aria-expanded="showCart"
               @click="showCart = !showCart"
             >
-              Cart <span class="badge badge-primary">{{ productsInCart }}</span>
+              <div class="d-flex align-items-center">
+                <Icon icon="cart" />
+                <span class="nav__badge">{{ productsInCart }}</span>
+              </div>
             </button>
             <div
               style="right: 0; left: auto"
@@ -44,10 +47,12 @@
 <script lang="ts">
 import Vue from "vue";
 import Cart from "../cart/Cart.vue";
+import Icon from "../icon/Icon.vue";
 export default Vue.extend({
   name: "NavBar",
   components: {
     Cart,
+    Icon,
   },
   data: () => {
     return { scrolledDown: 0, showCart: false };
@@ -92,5 +97,10 @@ export default Vue.extend({
   background-color: white;
   box-shadow: 0px -15px 30px black;
   transition: all 0.2s ease-in;
+}
+.nav__badge {
+  color: white;
+  padding: 0 $gutter;
+  font-size: 18px;
 }
 </style>

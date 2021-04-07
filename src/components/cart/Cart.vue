@@ -1,12 +1,12 @@
 <template>
   <div class="p-3 cart__container">
-    <template v-if="cartProducts.length">
+    <template v-if="cartProducts && cartProducts.length">
       <div
-        class="row"
+        class="row pb-3 d-flex align-items-center"
         v-for="(cartProduct, index) in cartProducts"
         :key="index"
       >
-        <div class="pb-3 col-7 text-truncate">
+        <div class="col-7 text-truncate">
           <span
             >{{ cartProduct.count }}
             <span class="m-1" style="opacity: 0.5">x</span>
@@ -16,18 +16,38 @@
           }}</router-link>
         </div>
         <div class="col-3">
-          <span @click="productAction(cartProduct.product, 'minus')">
-            <Icon class="cart__icon cart__margin" icon="minus-circle" />
-          </span>
-          <span @click="productAction(cartProduct.product, 'plus')">
-            <Icon class="cart__icon" icon="plus-circle" />
-          </span>
+          <Icon
+            v-on:on-click="productAction(cartProduct.product, 'minus')"
+            class="cart__icon cart__margin"
+            :size="24"
+            icon="dash-circle"
+          />
+          <Icon
+            v-on:on-click="productAction(cartProduct.product, 'plus')"
+            class="cart__icon"
+            :size="24"
+            icon="plus-circle"
+          />
         </div>
         <div class="col-2">
-          <span @click="productAction(cartProduct.product, 'remove')">
-            <Icon class="cart__icon" icon="trash" />
-          </span>
+          <Icon
+            v-on:on-click="productAction(cartProduct.product, 'remove')"
+            class="cart__icon"
+            :size="24"
+            icon="trash"
+          />
         </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#checkoutModal"
+          @click="$refs.checkoutModal.show()"
+        >
+          Contact us
+        </button>
+        <CheckoutModal ref="checkoutModal" />
       </div>
     </template>
     <template v-else>
@@ -41,16 +61,18 @@ import ProductInterface from "@/lib/product/interfaces";
 import { CartActions } from "@/store/cart/actions";
 import Vue from "vue";
 import Icon from "../icon/Icon.vue";
+import CheckoutModal from "../checkout/CheckoutModal.vue";
 import { CartInterface } from "./interfaces";
 export default Vue.extend({
   name: "Cart",
   components: {
     Icon,
+    CheckoutModal,
   },
   computed: {
     cartProducts: {
       get() {
-        return this.$store.getters.getProductsInCart as CartInterface[];
+        return (this.$store.getters.getProductsInCart as CartInterface[]) || [];
       },
     },
   },

@@ -1,9 +1,5 @@
 <template>
-  <img
-    :src="require(`../../assets/icons/${icon}.svg`)"
-    :style="{ width: `${width}px`, height: `${height}px` }"
-    :alt="alt"
-  />
+  <i :class="`bi bi-${icon}`" @click="$emit('on-click')" />
 </template>
 
 <script lang="ts">
@@ -16,17 +12,9 @@ export default Vue.extend({
       type: String as PropType<IconsType>,
       required: true,
     },
-    width: {
+    size: {
       type: Number as PropType<16 | 24>,
       default: 24,
-    },
-    height: {
-      type: Number as PropType<16 | 24>,
-      default: 24,
-    },
-    alt: {
-      type: String,
-      default: "Img",
     },
   },
 });
