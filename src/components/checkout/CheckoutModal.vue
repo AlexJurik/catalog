@@ -16,7 +16,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Contact us</h5>
+            <h5 class="modal-title">Kontaktujte nás</h5>
             <button
               type="button"
               class="close"
@@ -29,11 +29,11 @@
           </div>
           <div class="modal-body">
             <div class="alert alert-warning" role="alert">
-              You should copy urls of products and send us via
+              Zkopírujte text a pošlite nám cez
               <strong>Telegram</strong>
             </div>
             <div v-if="copied" class="alert alert-success" role="alert">
-              Order copied :)
+              Objednávka bola skopirovaná :)
             </div>
             <div class="form-group">
               <label for="exampleFormControlTextarea1">Your order</label>
@@ -47,7 +47,7 @@
             </div>
             <div class="d-flex justify-content-end">
               <button class="btn btn-outline-primary" @click="copyOrder()">
-                Copy
+                Kopirovať
               </button>
             </div>
           </div>
@@ -58,14 +58,14 @@
               data-dismiss="modal"
               @click="hide()"
             >
-              Close
+              Zatvoriť
             </button>
             <a
-              href="https://t.me/vladyslav_kolesnyk_sk/"
+              href="http://m.me/turisticke.oblecenie.sk"
               target="_blank"
               class="btn btn-primary"
             >
-              Redirect <Icon icon="box-arrow-up-right" />
+              Presmerovať <Icon icon="box-arrow-up-right" />
             </a>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default Vue.extend({
   computed: {
     cartProducts: {
       get() {
-        let text = `Hi, I want to order this stuff: \n\n`;
+        let text = `Ahojte, chcem si objednáť tieto produkty: \n\n`;
         text = text.concat(
           ((this.$store.getters.getProductsInCart as CartInterface[]) || [])
             .map((item, idx) => {

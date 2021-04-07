@@ -33,6 +33,7 @@
           <Icon
             v-on:on-click="productAction(cartProduct.product, 'remove')"
             class="cart__icon"
+            color="red"
             :size="24"
             icon="trash"
           />
@@ -45,13 +46,13 @@
           data-target="#checkoutModal"
           @click="$refs.checkoutModal.show()"
         >
-          Contact us
+          Kontaktovať
         </button>
         <CheckoutModal ref="checkoutModal" />
       </div>
     </template>
     <template v-else>
-      <span>No products in cart :(</span>
+      <span>Košík prázdný :(</span>
     </template>
   </div>
 </template>

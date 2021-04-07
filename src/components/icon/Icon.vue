@@ -1,5 +1,9 @@
 <template>
-  <i :class="`bi bi-${icon}`" @click="$emit('on-click')" />
+  <i
+    :class="`bi bi-${icon}`"
+    :style="{ fontSize: `${size}px`, color: color }"
+    @click="$emit('on-click')"
+  />
 </template>
 
 <script lang="ts">
@@ -13,8 +17,12 @@ export default Vue.extend({
       required: true,
     },
     size: {
-      type: Number as PropType<16 | 24>,
-      default: 24,
+      type: Number,
+      default: 16,
+    },
+    color: {
+      type: String,
+      default: null,
     },
   },
 });

@@ -9,12 +9,12 @@
             href="https://www.facebook.com/groups/973474723027172"
             target="_blank"
           >
-            <Icon icon="facebook" />
+            <Icon icon="facebook" :size="24" />
           </a>
         </div>
         <div class="mx-3">
           <a href="https://instagram.com/" target="_blank">
-            <Icon icon="instagram" />
+            <Icon icon="instagram" :size="24" />
           </a>
         </div>
         <div class="mx-3">
@@ -25,13 +25,14 @@
       </div>
       <div class="d-flex justify-content-center mt-3">
         <div class="mx-3">
-          <Icon icon="telephone-fill" />
+          <Icon icon="telephone-fill" :size="24" />
         </div>
         <p>+421 950 000 000</p>
       </div>
       <div class="d-flex justify-content-center mt-3">
         <span
-          ><strong>Outdoorline store</strong> © 2021 All Rights Reserved.</span
+          ><strong>Outdoorline store</strong> © 2021 Všetky práva
+          vyhradené.</span
         >
       </div>
     </div>

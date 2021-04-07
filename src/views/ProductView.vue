@@ -30,19 +30,19 @@
       </div>
       <template v-if="product.description">
         <h5 class="d-flex align-content-start">
-          <strong>Description:</strong>
+          <strong>Popis:</strong>
         </h5>
         <p class="d-flex align-content-start mb-5 product-view__desc">
           {{ product.description }}
         </p>
       </template>
       <template v-if="product.state">
-        <h5 class="d-flex align-content-start"><strong>State:</strong></h5>
+        <h5 class="d-flex align-content-start"><strong>Stav:</strong></h5>
         &nbsp;
         <p class="d-flex align-content-start">{{ product.state }}</p>
       </template>
       <button class="btn btn-secondary btn-lg w-100" @click="addToCart()">
-        Add to cart
+        Pridať do košíka
       </button>
     </div>
   </div>

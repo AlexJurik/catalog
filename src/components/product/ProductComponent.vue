@@ -19,7 +19,7 @@
           <Icon icon="cart-plus" />
         </button>
         <router-link :to="'/products/' + product.id" class="btn btn-primary"
-          >More</router-link
+          >Viac</router-link
         >
       </div>
     </div>

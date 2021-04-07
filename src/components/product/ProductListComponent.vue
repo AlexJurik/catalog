@@ -10,7 +10,7 @@
       </div>
     </div>
     <div v-else>
-      <span>No products in the list :(</span>
+      <span>Nie sú žiadné produkty :(</span>
     </div>
   </div>
 </template>
