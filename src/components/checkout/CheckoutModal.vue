@@ -30,7 +30,7 @@
           <div class="modal-body">
             <div class="alert alert-warning" role="alert">
               Zkopírujte text a pošlite nám cez
-              <strong>Telegram</strong>
+              <strong>Messenger</strong>
             </div>
             <div v-if="copied" class="alert alert-success" role="alert">
               Objednávka bola skopirovaná :)
