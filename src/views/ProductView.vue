@@ -4,7 +4,7 @@
       class="position-fixed product-view__back"
       icon="arrow-left"
       :size="40"
-      @click="goBack()"
+      v-on:on-click="goBack()"
     />
 
     <div class="m-auto mb-5 product-view__container">
@@ -53,10 +53,12 @@ import { RootActions } from "@/store/actions";
 import { CartActions } from "@/store/cart/actions";
 import Vue from "vue";
 import ImagesComponent from "../components/images/ImagesComponent.vue";
+import Icon from "../components/icon/Icon.vue";
 export default Vue.extend({
   name: "ProductView",
   components: {
     ImagesComponent,
+    Icon,
   },
   computed: {
     product: {

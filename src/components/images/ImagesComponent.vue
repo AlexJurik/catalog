@@ -24,7 +24,7 @@
         :class="{ active: index === activeImageId }"
       >
         <img
-          :src="'http://localhost:1337' + image.url"
+          :src="image.url"
           class="d-block img-fluid rounded"
           :width="width"
           :height="height"

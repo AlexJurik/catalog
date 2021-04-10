@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5">
+  <div class="products__container p-5">
     <ProductListComponent :products="products" />
   </div>
 </template>
@@ -24,3 +24,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss">
+.products__container {
+  height: 100%;
+}
+</style>
