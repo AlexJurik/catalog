@@ -6,7 +6,7 @@
       <div class="d-flex justify-content-center m-2">
         <div class="mx-3">
           <a
-            href="https://www.facebook.com/groups/973474723027172"
+            href="https://www.facebook.com/turisticke.oblecenie.sk"
             target="_blank"
           >
             <Icon icon="facebook" :size="24" />
