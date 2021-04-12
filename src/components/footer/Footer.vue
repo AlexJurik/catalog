@@ -12,13 +12,13 @@
             <Icon icon="facebook" :size="24" />
           </a>
         </div>
-        <div class="mx-3">
+        <!-- <div class="mx-3">
           <a href="https://instagram.com/" target="_blank">
             <Icon icon="instagram" :size="24" />
           </a>
-        </div>
+        </div> -->
         <div class="mx-3">
-          <a href="mailto:alexander.jurik@outlook.com" target="_blank">
+          <a href="mailto:kalina109oleh@gmail.com" target="_blank">
             <Icon icon="envelope-fill" :size="24" />
           </a>
         </div>
@@ -27,7 +27,7 @@
         <div class="mx-3">
           <Icon icon="telephone-fill" :size="24" />
         </div>
-        <p>+421 950 000 000</p>
+        <p>+421 951 595 935</p>
       </div>
       <div class="d-flex justify-content-center mt-3">
         <span
@@ -49,3 +49,11 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style lang="scss">
+@import "../../../scss/variables.scss";
+footer {
+  height: $gutter * 28;
+  width: 100%;
+}
+</style>

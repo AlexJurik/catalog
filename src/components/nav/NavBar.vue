@@ -80,6 +80,7 @@ export default Vue.extend({
 <style lang="scss">
 @import "../../../scss/variables.scss";
 .custom__navbar {
+  height: $gutter * 8;
   padding: $gutter $gutter * 3;
   transition: all 0.2s ease-in;
 }

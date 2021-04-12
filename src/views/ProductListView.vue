@@ -24,9 +24,3 @@ export default Vue.extend({
   },
 });
 </script>
-
-<style lang="scss">
-.products__container {
-  height: 100%;
-}
-</style>

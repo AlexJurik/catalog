@@ -29,13 +29,6 @@ export default Vue.extend({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  min-width: 400px;
-
-  background: linear-gradient(
-    45deg,
-    rgba(185, 185, 185, 0.6951155462184874) 0%,
-    rgba(113, 113, 113, 0) 50%,
-    rgba(185, 185, 185, 1) 100%
-  );
+  min-width: 410px;
 }
 </style>
