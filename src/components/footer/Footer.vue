@@ -2,7 +2,7 @@
   <footer class="footer">
     <div style="height: 2px" class="mx-15 border-bottom"></div>
     <div class="p-4">
-      <h3>Contact</h3>
+      <h3>Kontakt</h3>
       <div class="d-flex justify-content-center m-2">
         <div class="mx-3">
           <a

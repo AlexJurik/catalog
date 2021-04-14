@@ -2,10 +2,14 @@ export default interface ProductInterface {
     id: number;
     title: string;
     description: string;
+    short_description: string;
+    descriptionHtml: string;
     size: SizesEnum;
     state: string;
     price: number;
     url: string;
+    created_at: Date;
+    isNew: boolean;
     images: ImageInterface[];
 }
 

@@ -20,26 +20,32 @@
           data-toggle="tooltip"
           :title="product.title"
         >
-          <h3 class="text-truncate">
+          <h2 class="text-truncate">
             {{ product.title }}
-          </h3>
+          </h2>
         </div>
         <h3>
           <strong class="text-muted">{{ product.price }} €</strong>
         </h3>
       </div>
       <template v-if="product.description">
-        <h5 class="d-flex align-content-start">
+        <h4 class="d-flex align-content-start">
           <strong>Popis:</strong>
-        </h5>
-        <p class="d-flex align-content-start mb-5 product-view__desc">
-          {{ product.description }}
-        </p>
+        </h4>
+        <p
+          class="d-flex align-content-start mb-3 product-view__desc"
+          v-html="product.descriptionHtml"
+        ></p>
       </template>
       <template v-if="product.state">
-        <h5 class="d-flex align-content-start"><strong>Stav:</strong></h5>
+        <h4 class="d-flex align-content-start"><strong>Stav:</strong></h4>
         &nbsp;
         <p class="d-flex align-content-start">{{ product.state }}</p>
+      </template>
+      <template v-if="product.size">
+        <h4 class="d-flex align-content-start"><strong>Veľkosť:</strong></h4>
+        &nbsp;
+        <p class="d-flex align-content-start">{{ product.size }}</p>
       </template>
       <button class="btn btn-secondary btn-lg w-100" @click="addToCart()">
         Pridať do košíka

@@ -1,6 +1,12 @@
 <template>
   <div class="products__container p-5">
     <ProductListComponent :products="products" />
+    <h4>
+      Máte otázky? Kontaktujte nás cez
+      <a href="http://m.me/turisticke.oblecenie.sk" target="_blank">
+        Messenger
+      </a>
+    </h4>
   </div>
 </template>
 
