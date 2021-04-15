@@ -28,11 +28,6 @@ export const actions: ActionTree<RootState, RootState> = {
                 ) {
                     product.isNew = true;
                 }
-                if (product.images?.length) {
-                    for (const image of product.images) {
-                        image.url = `${process.env.VUE_APP_BASE_URL}${image.url}`;
-                    }
-                }
             }
 
             formattedData = formattedData.sort((a) => {
