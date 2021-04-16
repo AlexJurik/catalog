@@ -7,12 +7,12 @@
           <strong> {{ product.title }}</strong>
         </h5>
         <p class="card-text text-truncate">{{ product.short_description }}</p>
-        <h5 class="text-muted">
-          <strong>{{ product.price }} €</strong>
-        </h5>
         <h4 v-if="product.isNew">
           <span class="badge-pill badge-danger">Nové</span>
         </h4>
+        <h5 class="text-muted">
+          <strong>{{ product.price }} €</strong>
+        </h5>
       </div>
       <div class="card-footer">
         <button
