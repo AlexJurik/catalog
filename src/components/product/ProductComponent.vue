@@ -3,9 +3,9 @@
     <h4 v-if="product.isNew" class="product__badge">
       <span class="badge-pill badge-danger">Nové</span>
     </h4>
-    <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 20rem">
+    <div class="card shadow mb-5 rounded" style="width: 20rem">
       <ImagesComponent :images="product.images" />
-      <div class="card-body">
+      <div class="card-body d-flex flex-column justify-content-end">
         <h5 class="text-uppercase text-truncated card-title">
           <strong> {{ product.title }}</strong>
         </h5>
@@ -13,20 +13,19 @@
         <h5 class="text-muted">
           <strong>{{ product.price }} €</strong>
         </h5>
-
-        <div>
-          <button
-            type="button"
-            class="btn btn-secondary"
-            style="margin-right: 8px"
-            @click="addToCart()"
-          >
-            <Icon icon="cart-plus" />
-          </button>
-          <router-link :to="'/products/' + product.id" class="btn btn-primary"
-            >Viac</router-link
-          >
-        </div>
+      </div>
+      <div class="card-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          style="margin-right: 8px"
+          @click="addToCart()"
+        >
+          <Icon icon="cart-plus" />
+        </button>
+        <router-link :to="'/products/' + product.id" class="btn btn-primary"
+          >Viac</router-link
+        >
       </div>
     </div>
   </div>
@@ -68,7 +67,7 @@ export default Vue.extend({
 .product__badge {
   position: absolute;
   top: -$gutter * 2;
-  left: $gutter * 15;
+  left: $gutter * 18.5;
   z-index: 2;
 }
 </style>

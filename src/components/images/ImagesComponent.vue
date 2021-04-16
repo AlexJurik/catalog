@@ -26,6 +26,7 @@
         <img
           :src="image.url"
           class="d-block img-fluid rounded"
+          :class="{ 'w-100': !width, 'h-100': !height }"
           :width="width"
           :height="height"
           :alt="image.alternativeText"
@@ -77,11 +78,11 @@ export default Vue.extend({
     },
     width: {
       type: Number,
-      default: 300,
+      default: null,
     },
     height: {
       type: Number,
-      default: 400,
+      default: null,
     },
   },
   data(): { activeImageId: number } {

@@ -1,15 +1,14 @@
 <template>
   <div class="container">
     <div v-if="products && products.length" class="row">
-      <div
-        class="col d-flex justify-content-center"
+      <ProductComponent
         v-for="product in products"
         :key="product.id"
-      >
-        <ProductComponent v-bind:product="product" />
-      </div>
+        v-bind:product="product"
+        class="col d-flex justify-content-center"
+      />
     </div>
-    <div v-else>
+    <div class="mb-3" v-else>
       <span>Nie sú žiadné produkty :(</span>
     </div>
   </div>
