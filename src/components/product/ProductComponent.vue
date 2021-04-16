@@ -1,8 +1,5 @@
 <template>
   <div class="product__wrapper">
-    <h4 v-if="product.isNew" class="product__badge">
-      <span class="badge-pill badge-danger">Nové</span>
-    </h4>
     <div class="card shadow mb-5 rounded" style="width: 20rem">
       <ImagesComponent :images="product.images" />
       <div class="card-body d-flex flex-column justify-content-end">
@@ -13,6 +10,9 @@
         <h5 class="text-muted">
           <strong>{{ product.price }} €</strong>
         </h5>
+        <h4 v-if="product.isNew">
+          <span class="badge-pill badge-danger">Nové</span>
+        </h4>
       </div>
       <div class="card-footer">
         <button
@@ -67,7 +67,7 @@ export default Vue.extend({
 .product__badge {
   position: absolute;
   top: -$gutter * 2;
-  left: $gutter * 18.5;
+  left: $gutter * 22;
   z-index: 2;
 }
 </style>

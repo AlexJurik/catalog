@@ -29,6 +29,6 @@ export default Vue.extend({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  min-width: 410px;
+  min-width: 360px;
 }
 </style>
