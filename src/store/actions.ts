@@ -2,7 +2,7 @@ import ProductInterface from '@/lib/product/interfaces';
 import { RootMutations } from './mutations';
 import { RootState } from './interfaces';
 import { ActionTree } from 'vuex';
-import axios from "axios";
+import axios from "../plugins/axios";
 import { Remarkable } from 'remarkable';
 
 export enum RootActions {
@@ -11,7 +11,7 @@ export enum RootActions {
 
 export const actions: ActionTree<RootState, RootState> = {
     async [RootActions.LOAD_PRODUCTS](context) {
-        await axios.get(`${process.env.VUE_APP_BASE_URL}/products`).then((response) => {
+        await axios.get(`/products`).then((response) => {
             let formattedData = [...response.data] as ProductInterface[];
             for (const product of formattedData) {
                 product.url = `${window.location.origin}/products/${product.id}`;

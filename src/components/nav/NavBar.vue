@@ -5,9 +5,9 @@
       :class="{ scrolled_navbar: scrolledDown === 1 }"
     >
       <div class="d-flex justify-content-between w-100">
-        <router-link to="/" class="custom__navbar-brand"
-          >Outdoorline store</router-link
-        >
+        <router-link to="/" class="custom__navbar-brand ml-3"
+          ><img src="../../assets/logo.png" alt="Logo" width="64" height="64"
+        /></router-link>
         <div class="d-flex align-items-center">
           <div class="dropdown" :class="{ show: showCart }">
             <button
@@ -80,7 +80,8 @@ export default Vue.extend({
 <style lang="scss">
 @import "../../../scss/variables.scss";
 .custom__navbar {
-  height: $gutter * 8;
+  display: flex;
+  height: $gutter * 10;
   padding: $gutter $gutter * 3;
   transition: all 0.2s ease-in;
 }

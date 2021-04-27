@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import './plugins/axios'
+import './plugins/axios.ts'
 import App from './App.vue'
 import router from './router'
 import '../scss/custom.scss'
