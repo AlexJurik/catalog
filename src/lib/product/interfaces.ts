@@ -4,7 +4,7 @@ export default interface ProductInterface {
     description: string;
     short_description: string;
     descriptionHtml: string;
-    size: SizesEnum;
+    size: string;
     state: string;
     price: number;
     url: string;
@@ -20,5 +20,3 @@ export interface ImageInterface {
     width: number;
     url: string;
 }
-
-export type SizesEnum = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl' | 'xxl';
