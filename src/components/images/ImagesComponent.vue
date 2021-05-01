@@ -57,12 +57,7 @@
     </button>
   </div>
   <div v-else>
-    <img
-      class="d-block w-100"
-      src="../../assets/no-image.png"
-      alt="No images"
-    />
-    <p>There are no images</p>
+    <p class="mt-5">Obrázky neboli najdené</p>
   </div>
 </template>
 

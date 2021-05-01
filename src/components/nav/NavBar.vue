@@ -25,7 +25,6 @@
               </div>
             </button>
             <div
-              style="right: 0; left: auto"
               class="dropdown-menu dropdown-menu-right"
               :class="{ show: showCart }"
               aria-labelledby="cartButton"
