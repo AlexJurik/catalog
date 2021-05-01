@@ -61,7 +61,7 @@
               Zatvoriť
             </button>
             <a
-              href="http://m.me/turisticke.oblecenie.sk"
+              href="http://m.me/tatra.hills"
               target="_blank"
               class="btn btn-primary"
             >
