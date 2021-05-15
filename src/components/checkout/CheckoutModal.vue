@@ -32,6 +32,10 @@
               Zkopírujte text a pošlite nám cez
               <strong>Messenger</strong>
             </div>
+            <div v-if="isGiveaway" class="alert alert-success" role="alert">
+              Gratulujeme! Po tejto objednávke sa automaticky zapojíte do našej
+              súťaže ;)
+            </div>
             <div v-if="copied" class="alert alert-success" role="alert">
               Objednávka bola skopirovaná :)
             </div>
@@ -112,6 +116,7 @@ export default Vue.extend({
     return {
       showModal: false,
       copied: false,
+      isGiveaway: false,
     };
   },
   methods: {

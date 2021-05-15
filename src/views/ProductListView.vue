@@ -49,7 +49,9 @@ export default Vue.extend({
     };
   },
   mounted() {
-    this.$store.dispatch(RootActions.LOAD_PRODUCTS);
+    if (!this.products?.length) {
+      this.$store.dispatch(RootActions.LOAD_PRODUCTS);
+    }
   },
   methods: {
     setFileteredProducts(products: ProductInterface[]) {

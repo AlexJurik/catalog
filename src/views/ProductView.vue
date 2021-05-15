@@ -74,7 +74,9 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.$store.dispatch(RootActions.LOAD_PRODUCTS);
+    if (!this.product) {
+      this.$store.dispatch(RootActions.LOAD_PRODUCTS);
+    }
   },
   methods: {
     goBack() {
