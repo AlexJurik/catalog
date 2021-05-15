@@ -87,13 +87,23 @@ export default Vue.extend({
     cartProducts: {
       get() {
         let text = `Ahojte, chcem si objednáť tieto produkty: \n\n`;
-        text = text.concat(
-          ((this.$store.getters.getProductsInCart as CartInterface[]) || [])
-            .map((item, idx) => {
-              return `${idx + 1}. ${item.product.url} (${item.count}x) \n`;
-            })
-            .join("")
-        );
+        let products =
+          (this.$store.getters.getProductsInCart as CartInterface[]) || [];
+        let giveaway = false;
+        products.forEach((item, idx) => {
+          text = text.concat(
+            `${idx + 1}. ${item.product.url} (${item.count}x) \n`
+          );
+
+          if (item.product.giveaway) {
+            giveaway = true;
+          }
+        });
+
+        if (giveaway) {
+          text = text.concat(`\nZúčastňujem sa vašej súťaží! ;)`);
+        }
+
         return text;
       },
     },

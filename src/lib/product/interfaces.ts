@@ -4,6 +4,7 @@ export default interface ProductInterface {
     description: string;
     short_description: string;
     descriptionHtml: string;
+    giveaway: boolean;
     size: string;
     state: string;
     price: number;
