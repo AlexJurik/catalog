@@ -48,18 +48,18 @@ export default Vue.extend({
       excludeSearchKeys: [],
     };
   },
-  mounted() {
-    if (!this.products?.length) {
+  created() {
+    if (!this.productsFromStore?.length) {
       this.$store.dispatch(RootActions.LOAD_PRODUCTS);
+    } else {
+      this.setInternals(this.productsFromStore);
     }
   },
   methods: {
     setFileteredProducts(products: ProductInterface[]) {
       this.products = products;
     },
-  },
-  watch: {
-    productsFromStore: function (products: ProductInterface[]) {
+    setInternals(products: ProductInterface[]) {
       this.allProducts = products;
       this.products = products;
       this.excludeSearchKeys = [
@@ -70,6 +70,11 @@ export default Vue.extend({
         "isNew",
         "images",
       ];
+    },
+  },
+  watch: {
+    productsFromStore: function (products: ProductInterface[]) {
+      this.setInternals(products);
     },
   },
 });
