@@ -64,13 +64,15 @@
             >
               Zatvoriť
             </button>
-            <a
-              href="http://m.me/tatra.hills"
-              target="_blank"
-              class="btn btn-primary"
-            >
-              Presmerovať <Icon icon="box-arrow-up-right" />
-            </a>
+            <button @click="cleanCart()">
+              <a
+                href="http://m.me/tatra.hills"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                Presmerovať <Icon icon="box-arrow-up-right" />
+              </a>
+            </button>
           </div>
         </div>
       </div>
@@ -79,6 +81,7 @@
 </template>
 
 <script lang="ts">
+import { CartActions } from "@/store/cart/actions";
 import { CartInterface } from "@/store/cart/interfaces";
 import Vue from "vue";
 import Icon from "../icon/Icon.vue";
@@ -132,6 +135,10 @@ export default Vue.extend({
     },
     copyOrder() {
       $("#orderTextarea").trigger("select");
+    },
+    cleanCart() {
+      this.hide();
+      this.$store.dispatch(CartActions.CLEAN_CART);
     },
   },
   mounted() {

@@ -6,6 +6,7 @@ export enum CartMutations {
     ADD_PRODUCT = '[CART] ADD_PRODUCT',
     REMOVE_PRODUCT = '[CART] REMOVE_PRODUCT',
     MINUS_PRODUCT = '[CART] MINUS_PRODUCT',
+    CLEAN_CART = '[CART] CLEAN_CART',
 }
 
 export const mutations: MutationTree<CartState> = {
@@ -36,5 +37,8 @@ export const mutations: MutationTree<CartState> = {
         if (idxToRemove !== -1) {
             state.products.splice(idxToRemove, 1);
         }
+    },
+    [CartMutations.CLEAN_CART](state: CartState) {
+        state.products = [];
     }
 }

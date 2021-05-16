@@ -7,7 +7,8 @@ import { CartMutations } from './mutations';
 export enum CartActions {
     ADD_PRODUCT = 'addProductToCart',
     MINUS_PRODUCT = 'minusProductFromCart',
-    REMOVE_PRODUCT = 'removeProductFromCart'
+    REMOVE_PRODUCT = 'removeProductFromCart',
+    CLEAN_CART = 'cleanCart',
 }
 
 export const actions: ActionTree<CartState, RootState> = {
@@ -19,5 +20,8 @@ export const actions: ActionTree<CartState, RootState> = {
     },
     [CartActions.REMOVE_PRODUCT](context, id: number) {
         context.commit(CartMutations.REMOVE_PRODUCT, id)
+    },
+    [CartActions.CLEAN_CART](context) {
+        context.commit(CartMutations.CLEAN_CART)
     }
 }
