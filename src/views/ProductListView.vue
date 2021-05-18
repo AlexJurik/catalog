@@ -49,11 +49,7 @@ export default Vue.extend({
     };
   },
   created() {
-    if (!this.productsFromStore?.length) {
-      this.$store.dispatch(RootActions.LOAD_PRODUCTS);
-    } else {
-      this.setInternals(this.productsFromStore);
-    }
+    this.$store.dispatch(RootActions.LOAD_PRODUCTS);
   },
   methods: {
     setFileteredProducts(products: ProductInterface[]) {
