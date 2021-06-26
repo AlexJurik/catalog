@@ -31,11 +31,7 @@ export const actions: ActionTree<RootState, RootState> = {
             }
 
             formattedData = formattedData.sort((a) => {
-                return a.isNew ? -1 : 1;
-            });
-
-            formattedData = formattedData.sort((a) => {
-                return a.giveaway ? -1 : 1;
+                return a.giveaway ? -2 : a.isNew ? -1 : 1;
             });
 
             context.commit(RootMutations.SET_PRODUCTS, formattedData);
