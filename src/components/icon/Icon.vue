@@ -18,11 +18,11 @@ export default Vue.extend({
     },
     size: {
       type: Number,
-      default: 16,
+      default: () => 16,
     },
     color: {
       type: String,
-      default: null,
+      default: () => null,
     },
   },
 });

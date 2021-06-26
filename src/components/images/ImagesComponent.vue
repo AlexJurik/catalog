@@ -69,15 +69,15 @@ export default Vue.extend({
   props: {
     images: {
       type: Array as PropType<Array<ImageInterface>>,
-      default: [],
+      default: () => [],
     },
     width: {
       type: Number,
-      default: null,
+      default: () => null,
     },
     height: {
       type: Number,
-      default: null,
+      default: () => null,
     },
   },
   data(): { activeImageId: number } {
