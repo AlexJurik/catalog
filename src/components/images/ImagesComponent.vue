@@ -24,7 +24,7 @@
         :class="{ active: index === activeImageId }"
       >
         <img
-          :src="image.url"
+          v-lazy="image.url"
           class="d-block img-fluid rounded"
           :class="{ 'w-100': !width, 'h-100': !height }"
           :width="width"
