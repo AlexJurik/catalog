@@ -7,15 +7,23 @@ export function search<T extends Record<string, unknown>, U extends keyof T>
         if (keys.length) {
             keys = keys.filter((key) => !excludeKeys.includes(key));
             for (const key of keys) {
-                const value = (String(item[key])).toLowerCase();
-                includes = value.includes(q.toLowerCase());
+                if (item[key]) {
+                    const value = normalizeString(String(item[key]));
+                    includes = value.includes(normalizeString(q));
 
-                if (includes) {
-                    return true;
+                    if (includes) {
+                        return true;
+                    }
+                } else {
+                    continue;
                 }
             }
         }
 
         return includes;
     });
+}
+
+function normalizeString(text: string) {
+    return text.normalize('NFD').replace(/\p{Diacritic}/gu, "").toLowerCase().trim();
 }

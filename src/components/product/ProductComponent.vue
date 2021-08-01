@@ -1,5 +1,5 @@
 <template>
-  <div class="product__wrapper">
+  <div>
     <div class="card shadow mb-5 rounded" style="width: 20rem">
       <ImagesComponent :images="product.images" />
       <div class="card-body d-flex flex-column justify-content-end">
@@ -58,11 +58,6 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "../../../scss/variables.scss";
-.product__wrapper {
-  position: relative;
-  left: 0px;
-  top: 0px;
-}
 
 .product__badge {
   position: absolute;

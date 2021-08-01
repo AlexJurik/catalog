@@ -30,7 +30,7 @@
           <div class="modal-body">
             <div class="alert alert-warning" role="alert">
               Zkopírujte text a pošlite nám cez
-              <strong>Messenger</strong>
+              <strong>Messenger</strong> alebo <strong>Instagram</strong>
             </div>
             <div v-if="isGiveaway" class="alert alert-success" role="alert">
               Gratulujeme! Po tejto objednávke sa automaticky zapojíte do našej
@@ -40,7 +40,7 @@
               Objednávka bola skopirovaná :)
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Your order</label>
+              <label for="exampleFormControlTextarea1">Vaša objednávka</label>
               <textarea
                 class="form-control"
                 id="orderTextarea"
@@ -64,15 +64,24 @@
             >
               Zatvoriť
             </button>
-            <button @click="cleanCart()">
+            <div @click="cleanCart()">
               <a
+                class="btn btn-primary"
                 href="http://m.me/tatra.hills"
+                target="_blank"
+              >
+                Presmerovať <Icon icon="facebook" />
+              </a>
+            </div>
+            <div @click="cleanCart()">
+              <a
+                href="https://www.instagram.com/direct/t/340282366841710300949128155230138464165"
                 target="_blank"
                 class="btn btn-primary"
               >
-                Presmerovať <Icon icon="box-arrow-up-right" />
+                Presmerovať <Icon icon="instagram" />
               </a>
-            </button>
+            </div>
           </div>
         </div>
       </div>
@@ -156,5 +165,9 @@ export default Vue.extend({
 <style lang="scss">
 .modal-backdrop {
   opacity: 0.5;
+}
+
+.text-dec_none {
+  text-decoration: none;
 }
 </style>

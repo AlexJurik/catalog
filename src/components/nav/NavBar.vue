@@ -4,34 +4,73 @@
       class="custom__navbar"
       :class="{ scrolled_navbar: scrolledDown === 1 }"
     >
-      <div class="d-flex justify-content-between w-100">
+      <div class="d-flex align-items-center me-auto">
         <router-link to="/" class="custom__navbar-brand ml-3"
           ><img src="../../assets/logo.png" alt="Logo" width="64" height="64"
         /></router-link>
-        <div class="d-flex align-items-center">
-          <div class="dropdown" :class="{ show: showCart }">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              id="cartButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              :aria-expanded="showCart"
-              @click="showCart = !showCart"
-            >
-              <div class="d-flex align-items-center">
-                <Icon icon="cart" />
-                <span class="nav__badge">{{ productsInCart }}</span>
-              </div>
-            </button>
-            <div
-              style="right: 0; left: auto"
-              class="dropdown-menu dropdown-menu-right"
-              :class="{ show: showCart }"
-              aria-labelledby="cartButton"
-            >
-              <Cart />
+      </div>
+      <div class="d-flex align-items-center m-3">
+        <a
+          class="mx-3 text-dec_none"
+          href="https://www.facebook.com/tatra.hills"
+          target="_blank"
+        >
+          <Icon
+            class="d-flex align-self-center"
+            icon="facebook"
+            :size="24"
+            :color="'green'"
+          />
+        </a>
+        <a
+          class="mx-3 text-dec_none"
+          href="https://www.instagram.com/tatrahills"
+          target="_blank"
+        >
+          <Icon
+            class="d-flex align-self-center"
+            icon="instagram"
+            :size="24"
+            :color="'green'"
+          />
+        </a>
+        <a
+          class="mx-3 text-dec_none"
+          href="mailto:tatrahill.sk@gmail.com"
+          target="_blank"
+        >
+          <Icon
+            class="d-flex align-self-center"
+            icon="envelope-fill"
+            :size="24"
+            :color="'green'"
+          />
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <div class="dropdown" :class="{ show: showCart }">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="cartButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            :aria-expanded="showCart"
+            @click="showCart = !showCart"
+          >
+            <div class="d-flex align-items-center">
+              <Icon icon="cart" />
+              <span class="nav__badge">{{ productsInCart }}</span>
             </div>
+          </button>
+          <div
+            style="right: 0; left: auto"
+            class="dropdown-menu dropdown-menu-right"
+            :class="{ show: showCart }"
+            aria-labelledby="cartButton"
+          >
+            <Cart />
           </div>
         </div>
       </div>
@@ -104,5 +143,9 @@ export default Vue.extend({
   color: white;
   padding: 0 $gutter;
   font-size: 18px;
+}
+
+.text-dec_none {
+  text-decoration: none;
 }
 </style>
