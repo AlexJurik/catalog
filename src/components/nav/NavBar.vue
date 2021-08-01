@@ -145,7 +145,7 @@ export default Vue.extend({
   font-size: 18px;
 }
 
-.text-dec_none {
+.text-dec_none:hover {
   text-decoration: none;
 }
 </style>
