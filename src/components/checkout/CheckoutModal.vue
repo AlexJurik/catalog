@@ -75,7 +75,7 @@
             </div>
             <div @click="cleanCart()">
               <a
-                href="https://www.instagram.com/direct/t/340282366841710300949128155230138464165"
+                href="https://www.instagram.com/tatrahills"
                 target="_blank"
                 class="btn btn-primary"
               >
