@@ -7,6 +7,9 @@
           <strong> {{ product.title }}</strong>
         </h5>
         <p class="card-text text-truncate">{{ product.short_description }}</p>
+        <p v-if="product.size" class="card-text text-truncate">
+          {{ product.size }}
+        </p>
         <h4 v-if="product.isNew">
           <span class="badge-pill badge-danger">Nové</span>
         </h4>
