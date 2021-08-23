@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <NavBar />
+    <Loader />
     <router-view />
     <Footer />
   </div>
@@ -9,11 +10,13 @@
 <script lang="ts">
 import Vue from "vue";
 import NavBar from "./components/nav/NavBar.vue";
+import Loader from "./components/loader/Loader.vue";
 import Footer from "./components/footer/Footer.vue";
 
 export default Vue.extend({
   components: {
     NavBar,
+    Loader,
     Footer,
   },
 });

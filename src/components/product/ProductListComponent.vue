@@ -8,9 +8,6 @@
         class="col d-flex justify-content-center"
       />
     </div>
-    <div class="mb-3" v-else>
-      <span>Nie sú žiadné produkty :(</span>
-    </div>
   </div>
 </template>
 

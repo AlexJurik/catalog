@@ -1,5 +1,5 @@
 <template>
-  <div class="products__container p-5">
+  <div v-if="!loader" class="products__container p-5">
     <div class="products__search">
       <div class="products__search-container">
         <Search
@@ -31,6 +31,11 @@ export default Vue.extend({
     productsFromStore: {
       get(): ProductInterface[] {
         return this.$store.getters.getProducts;
+      },
+    },
+    loader: {
+      get() {
+        return this.$store.getters.getLoaderState;
       },
     },
   },
