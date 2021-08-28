@@ -9,43 +9,8 @@
           ><img src="../../assets/logo.png" alt="Logo" width="64" height="64"
         /></router-link>
       </div>
-      <div class="d-flex align-items-center m-3">
-        <a
-          class="mx-3 text-dec_none"
-          href="https://www.facebook.com/tatra.hills"
-          target="_blank"
-        >
-          <Icon
-            class="d-flex align-self-center"
-            icon="facebook"
-            :size="24"
-            :color="'green'"
-          />
-        </a>
-        <a
-          class="mx-3 text-dec_none"
-          href="https://www.instagram.com/tatrahills"
-          target="_blank"
-        >
-          <Icon
-            class="d-flex align-self-center"
-            icon="instagram"
-            :size="24"
-            :color="'green'"
-          />
-        </a>
-        <a
-          class="mx-3 text-dec_none"
-          href="mailto:tatrahill.sk@gmail.com"
-          target="_blank"
-        >
-          <Icon
-            class="d-flex align-self-center"
-            icon="envelope-fill"
-            :size="24"
-            :color="'green'"
-          />
-        </a>
+      <div v-if="windowWidth > 440" class="d-flex align-items-center m-3">
+        <Social />
       </div>
 
       <div class="d-flex align-items-center">
@@ -74,6 +39,16 @@
           </div>
         </div>
       </div>
+      <Icon
+        class="d-flex align-self-center ml-4"
+        role="button"
+        :icon="filterIcon"
+        :size="28"
+        data-bs-toggle="tooltip"
+        data-bs-placement="bottom"
+        title="Filter"
+        v-on:on-click="showFilterSidebar()"
+      />
     </nav>
     <div
       v-if="scrolledDown !== 1"
@@ -84,17 +59,27 @@
 </template>
 
 <script lang="ts">
+import { FilterActions } from "@/store/filter/actions";
 import Vue from "vue";
 import Cart from "../cart/Cart.vue";
 import Icon from "../icon/Icon.vue";
+import Social from "../social/Social.vue";
+
 export default Vue.extend({
   name: "NavBar",
   components: {
     Cart,
     Icon,
+    Social,
   },
   data: () => {
-    return { scrolledDown: 0, showCart: false };
+    return {
+      scrolledDown: 0,
+      showCart: false,
+      showFilter: false,
+      filterIcon: "filter",
+      windowWidth: window.outerWidth,
+    };
   },
   computed: {
     productsInCart: {
@@ -107,9 +92,22 @@ export default Vue.extend({
     updateScroll() {
       this.scrolledDown = window.scrollY > 50 ? 1 : 0;
     },
+    showFilterSidebar() {
+      this.showFilter = true;
+      if (this.showFilter) {
+        this.$store.dispatch(FilterActions.SHOW_FILTER);
+      } else {
+        this.filterIcon = "filter";
+        this.$store.dispatch(FilterActions.HIDE_FILTER);
+      }
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.updateScroll);
+    window.addEventListener(
+      "resize",
+      () => (this.windowWidth = window.innerWidth)
+    );
   },
 });
 </script>

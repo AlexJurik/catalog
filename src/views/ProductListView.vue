@@ -3,6 +3,7 @@
     <div class="products__search">
       <div class="products__search-container">
         <Search
+          v-if="products.length"
           class="mb-5"
           :target="allProducts"
           :excludeKeys="excludeSearchKeys"

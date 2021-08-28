@@ -1,7 +1,9 @@
+import { FilterEnum } from '@/store/interfaces';
 export default interface ProductInterface {
     id: number;
     title: string;
     description: string;
+    filterType: FilterEnum;
     short_description: string;
     descriptionHtml: string;
     giveaway: boolean;

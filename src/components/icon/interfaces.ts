@@ -1,1 +1,1 @@
-export type IconsType = 'arrow-left' | 'cart-plus' | 'cart' | 'envelope-fill' | 'facebook' | 'instagram' | 'dash-circle' | 'plus-circle' | 'box-arrow-up-right' | 'telephone-fill' | 'trash';
+export type IconsType = 'arrow-left' | 'cart-plus' | 'cart' | 'envelope-fill' | 'facebook' | 'instagram' | 'dash-circle' | 'plus-circle' | 'box-arrow-up-right' | 'telephone-fill' | 'trash' | 'filter' | 'x';

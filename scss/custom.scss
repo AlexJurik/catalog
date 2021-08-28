@@ -39,4 +39,12 @@ $spacers: map-merge(
   $spacers
 );
 
+$list-group-active-bg: rgba(10, 149, 10, 0.3);
+$list-group-active-border-color: rgba(10, 149, 10, 0.8);
+$accordion-button-active-color: rgba(10, 149, 10, 1);
+$accordion-button-active-bg: rgba(10, 149, 10, 0.2);
+$accordion-button-focus-border-color: $input-focus-border-color;
+$accordion-button-focus-box-shadow: 0px 0px 5px 5px rgba(10, 149, 10, 0.1);
+$accordion-button-active-icon: $accordion-button-icon;
+
 @import "../node_modules/bootstrap";

@@ -3,6 +3,9 @@
     <div style="height: 2px" class="mx-15 border-bottom"></div>
     <div class="p-4">
       <h3>Kontakt</h3>
+      <div v-if="windowWidth < 440" class="d-flex justify-content-center m-3">
+        <Social />
+      </div>
       <div class="d-flex justify-content-center mt-3">
         <div class="mx-3">
           <Icon icon="telephone-fill" :size="24" />
@@ -19,10 +22,24 @@
 <script lang="ts">
 import Vue from "vue";
 import Icon from "../icon/Icon.vue";
+import Social from "../social/Social.vue";
+
 export default Vue.extend({
   name: "Footer",
   components: {
     Icon,
+    Social,
+  },
+  data: () => {
+    return {
+      windowWidth: window.innerWidth,
+    };
+  },
+  mounted() {
+    window.addEventListener(
+      "resize",
+      () => (this.windowWidth = window.innerWidth)
+    );
   },
 });
 </script>
