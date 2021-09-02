@@ -6,7 +6,9 @@
         <h5 class="text-uppercase text-truncated card-title">
           <strong> {{ product.title }}</strong>
         </h5>
-        <p class="card-text text-truncate">{{ product.short_description }}</p>
+        <p class="card-text text-truncate">
+          {{ product.short_description || product.size }}
+        </p>
         <!-- <p v-if="product.size" class="card-text text-truncate">
           {{ product.size }}
         </p> -->

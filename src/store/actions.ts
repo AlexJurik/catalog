@@ -12,7 +12,7 @@ export enum RootActions {
 }
 
 export const actions: ActionTree<RootState, RootState> = {
-    async [RootActions.LOAD_PRODUCTS](context) {
+    async [RootActions.LOAD_PRODUCTS]({ commit }) {
         this.dispatch(LoaderActions.START_LOADER);
         await axios.get(`/products`).then((response) => {
             let formattedData = formatProducts([...response.data] as ProductInterface[]);
@@ -20,7 +20,7 @@ export const actions: ActionTree<RootState, RootState> = {
                 return a.giveaway ? -2 : a.isNew ? -1 : 1;
             });
 
-            context.commit(RootMutations.SET_PRODUCTS, formattedData);
+            commit(RootMutations.SET_PRODUCTS, formattedData);
             this.dispatch(LoaderActions.REMOVE_LOADER);
         });
     },
