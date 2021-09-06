@@ -4,6 +4,7 @@
       class="mx-3 text-dec_none"
       href="https://www.facebook.com/tatra.hills"
       target="_blank"
+      rel="noreferrer"
     >
       <Icon
         class="d-flex align-self-center"
@@ -16,6 +17,7 @@
       class="mx-3 text-dec_none"
       href="https://www.instagram.com/tatrahills"
       target="_blank"
+      rel="noreferrer"
     >
       <Icon
         class="d-flex align-self-center"
@@ -28,6 +30,7 @@
       class="mx-3 text-dec_none"
       href="mailto:tatrahill.sk@gmail.com"
       target="_blank"
+      rel="noreferrer"
     >
       <Icon
         class="d-flex align-self-center"
