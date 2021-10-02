@@ -40,7 +40,7 @@
         &nbsp;
         <p class="d-flex align-content-start">{{ product.size }}</p>
       </template>
-      <div class="d-flex align-items-center">
+      <div class="d-flex">
         <button class="btn btn-secondary btn-lg mr-2">
           <Icon icon="arrow-left" :size="32" v-on:on-click="goBack()" />
         </button>
