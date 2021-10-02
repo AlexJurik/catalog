@@ -1,12 +1,5 @@
 <template>
   <div class="p-5" v-if="!!product">
-    <Icon
-      class="position-fixed product-view__back"
-      icon="arrow-left"
-      :size="40"
-      v-on:on-click="goBack()"
-    />
-
     <div class="m-auto mb-5 product-view__container">
       <ImagesComponent
         class="mb-5"
@@ -47,9 +40,14 @@
         &nbsp;
         <p class="d-flex align-content-start">{{ product.size }}</p>
       </template>
-      <button class="btn btn-secondary btn-lg w-100" @click="addToCart()">
-        Pridať do košíka
-      </button>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-secondary btn-lg mr-2">
+          <Icon icon="arrow-left" :size="32" v-on:on-click="goBack()" />
+        </button>
+        <button class="btn btn-success btn-lg w-100" @click="addToCart()">
+          Pridať do košíka
+        </button>
+      </div>
     </div>
   </div>
 </template>
